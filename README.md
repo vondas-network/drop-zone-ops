@@ -1,17 +1,13 @@
 # drop-zone-ops
 
 <p align="center">
-  <img width="45%" height="45%" src="https://github.com/vondas-network/videobeaux/blob/main/img/videobeaux-1.png?raw=true"/>  
+  <img width="25%" height="25%" src="https://github.com/vondas-network/drop-zone-ops/blob/main/image.png?raw=true"/>  
 </p>
 
-<p align="center"><em>Your friendly multilateral video toolkit built for artists by artists. It's your best friend.</em></p> 
+<p align="center"><em>Taking streaming to new heights!</em></p> 
 
-
-## Dependencies
-FFmpeg is required for the project. Install *ffmpeg* using [Homebrew](https://formulae.brew.sh/formula/ffmpeg)
-```bash
-brew install ffmpeg
-```
+## Attention
+- Only works with Linux and Windows
 
 ## Requirements
 

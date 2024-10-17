@@ -11,6 +11,10 @@
 
 An automation project focused on streamlining the m3u creation process with the Open Broadcast Software API & WebSockets
 
+## Video Demo
+
+https://github.com/user-attachments/assets/0ff4bf5c-e9e2-4d63-a5da-1fbda08663aa
+
 ## How does it work? 
 Place files in the drop zone or click "Upload Files" to upload content manually
 <p align="left">
@@ -63,7 +67,3 @@ source env/bin/activate
 ``` bash
 pip install -r requirements.txt
 ```
-
-## Video Demo
-
-https://github.com/user-attachments/assets/0ff4bf5c-e9e2-4d63-a5da-1fbda08663aa

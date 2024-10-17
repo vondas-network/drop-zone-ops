@@ -1,15 +1,15 @@
 <p align="center">
-  <img width="25%" height="25%" src="https://github.com/vondas-network/drop-zone-ops/blob/main/image.png?raw=true"/>  
+  <img width="40%" height="40%" src="https://github.com/user-attachments/assets/e3551d8c-dce3-4b38-be46-631013c78e06"/>  
 </p>
 
 <p align="center"><em>Taking streaming to new heights!</em></p> 
 
 ## What is this?
+An automation project focused on streamlining the m3u creation process with the Open Broadcast Software API & WebSockets
+
 <p align="left">
   <img width="50%" height="50%" src="https://github.com/user-attachments/assets/84709b52-4b5b-41b0-8ba9-6aed5f238d65"/>  
 </p>
-
-An automation project focused on streamlining the m3u creation process with the Open Broadcast Software API & WebSockets
 
 ## Video Demo
 

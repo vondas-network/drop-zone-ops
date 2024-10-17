@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder Dropzone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+    <style>
+        #file-list {
+            margin-top: 20px;
+            width: 400px; /* Adjust width as needed */
+            margin-left: auto;
+            margin-right: auto; /* Center the file list div */
+            text-align: left; /* Align text inside to the left */
+        }
+        .draggable {
+            cursor: move;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .buttons-container button {
+            margin: 0 10px;
+        }
+        #file-dropzone {
+            width: 400px; 
+            height: 200px; 
+            margin: 20px auto;
+        }
+        #notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dropzone Form -->
+    <form action="/upload" class="dropzone" id="file-dropzone"></form>
+
+    <!-- Action Buttons -->
+    <div class="buttons-container">
+        <button id="folder-upload-btn">Upload Folder</button>
+        <button id="export-btn">Export M3U</button>
+        <button id="clear-btn">Clear Uploads</button>
+    </div>
+
+    <!-- File List Display (Centered with Left-Aligned Text) -->
+    <div id="file-list"></div>
+
+    <!-- Hidden File Input for Folder Upload -->
+    <input type="file" id="folder-input" webkitdirectory hidden />
+
+    <!-- Notification Element -->
+    <div id="notification">Success!</div>
+
+    <script>
+        const fileList = document.getElementById('file-list');
+        const exportBtn = document.getElementById('export-btn');
+        const clearBtn = document.getElementById('clear-btn');
+        const folderInput = document.getElementById('folder-input');
+        const notification = document.getElementById('notification');
+        let filesArray = [];
+
+        document.getElementById('folder-upload-btn').onclick = () => folderInput.click();
+
+        folderInput.onchange = (event) => {
+            const files = event.target.files;
+            Array.from(files).forEach(file => {
+                const relativePath = file.webkitRelativePath || file.name;
+                filesArray.push(relativePath);
+            });
+            updateFileList();
+        };
+
+        Dropzone.options.fileDropzone = {
+            init: function() {
+                this.on("addedfile", (file) => {
+                    if (file.webkitRelativePath) {
+                        filesArray.push(file.webkitRelativePath);
+                    } else {
+                        filesArray.push(file.name);
+                    }
+                    updateFileList();
+                });
+            }
+        };
+
+        function updateFileList() {
+            fileList.innerHTML = ''; 
+            filesArray.forEach((file, index) => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'draggable';
+                fileItem.draggable = true;
+                fileItem.innerText = file;
+                fileItem.ondragstart = (e) => e.dataTransfer.setData('text/plain', index);
+                fileItem.ondragover = (e) => e.preventDefault();
+                fileItem.ondrop = (e) => {
+                    e.preventDefault();
+                    const fromIndex = e.dataTransfer.getData('text/plain');
+                    const toIndex = index;
+                    const [movedFile] = filesArray.splice(fromIndex, 1);
+                    filesArray.splice(toIndex, 0, movedFile);
+                    updateFileList();
+                };
+                fileList.appendChild(fileItem);
+            });
+        }
+
+        exportBtn.onclick = () => {
+            fetch('/export', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ videos: filesArray })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showNotification(data.message || 'Success!');
+            });
+        };
+
+        clearBtn.onclick = () => {
+            filesArray = [];
+            updateFileList();
+            const dropzone = Dropzone.forElement("#file-dropzone");
+            dropzone.removeAllFiles(true);
+        };
+
+        function showNotification(message) {
+            notification.innerText = message;
+            notification.style.display = 'block';
+            notification.style.opacity = '0';
+            setTimeout(() => {
+                notification.style.opacity = '1';
+            }, 10); 
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 500);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

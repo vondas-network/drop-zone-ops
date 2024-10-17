@@ -27,15 +27,15 @@ An automation project focused on streamlining the m3u creation process with the 
 
 ## Project setup
 
+Tested on: 
+- Windows: 11 & 10 (64-bit only) 
+- Linux: Ubuntu 24.04
+- MacOS: M1 Apple Silicon
+
 ### Linux & MacOS 
 
 #### Install VLC
 Download VLC [here](https://www.videolan.org/)
-
-Tested on
-- Windows: 11 & 10 (64-bit only) 
-- Linux: Ubuntu 24.04
-- MacOS: M1 Apple Silicon
 
 #### Install the project requirements
 ``` bash

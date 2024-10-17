@@ -16,7 +16,7 @@ An automation project focused on streamlining the m3u creation process with the 
 https://github.com/user-attachments/assets/0ff4bf5c-e9e2-4d63-a5da-1fbda08663aa
 
 ## How does it work? 
-Place files in the drop zone or click "Upload Files" to upload content manually
+Place files in the drop zone or click "Upload Folder" to upload content manually
 <p align="left">
   <img width="55%" height="55%" src="https://github.com/user-attachments/assets/929e3a4d-54e3-4eab-90cc-49447072ac97"/>  
 </p>

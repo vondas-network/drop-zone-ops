@@ -5,37 +5,56 @@
 <p align="center"><em>Taking streaming to new heights!</em></p> 
 
 ## What is this?
-An automation project focused on streamlining the m3u creation process with the Open Broadcast Software API & WebSockets
+An automation project focused on streamlining the m3u creation process with the Open Broadcast Software API & WebSockets. 
 
 <p align="left">
-  <img width="50%" height="50%" src="https://github.com/user-attachments/assets/84709b52-4b5b-41b0-8ba9-6aed5f238d65"/>  
+  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/004a37a7-f267-46a4-9684-e0a27ac535cd"/>  
 </p>
-
-## Video Demo
-
-https://github.com/user-attachments/assets/0ff4bf5c-e9e2-4d63-a5da-1fbda08663aa
 
 ## How does it work? 
-Place files in the drop zone or click "Upload Folder" to upload content manually
+
+Once the server is running, go to _http://localhost:9999_
+
 <p align="left">
-  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/929e3a4d-54e3-4eab-90cc-49447072ac97"/>  
+  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/8fc34706-f0a5-4173-8edd-3d831f032515"/>  
 </p>
 
-Export m3U file and create OBS event
-<img width="462" alt="Screenshot 2024-10-17 at 17 09 32" src="https://github.com/user-attachments/assets/a33b454c-a6be-4cf1-ad96-53887a6b52c7">
+Place files in the drop zone or click "Upload Folder" to upload content manually
 
-Look for the success message
-<img width="1389" alt="Screenshot 2024-10-17 at 17 11 00" src="https://github.com/user-attachments/assets/1b3e287f-0eae-4189-80b9-50864ffc40d2">
+<p align="left">
+  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/5a8dedca-5102-4b9a-b7cb-42685286445f"/>  
+</p>
 
-A new OBS _scene_ is created with _VLC_ as a source
-<img width="1432" alt="Screenshot 2024-10-17 at 17 07 40" src="https://github.com/user-attachments/assets/a6431c57-c941-42f1-a0dd-163e2e46214e">
+Export m3U file to the root directory, example below
+
+``` bash
+#EXTM3U
+#EXTINF:0,highlight_video.mp4
+highlight_video.mp4
+#EXTINF:0,replay_video.mp4
+replay_video.mp4
+```
+
+Schedule your stream
+
+<p align="left">
+  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/4add66dd-4ce1-40cc-92eb-cea1b7e98b6b"/>  
+</p>
+
+
+Once the stream is scheduled it will refresh the page and appear below
+<p align="left">
+  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/5298e22d-eb81-45ba-a1db-ef214a7f8e38"/>  
+</p>
+
+A new OBS _scene_ is created with _VLC_ as a source when the scheduled time happens
+
+<p align="left">
+  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/a6431c57-c941-42f1-a0dd-163e2e46214e"/>  
+</p>
+
 
 ## Project setup
-
-Tested on: 
-- Windows: 11 & 10 (64-bit only) 
-- Linux: Ubuntu 24.04
-- MacOS: M1 Apple Silicon
 
 ### Linux & MacOS 
 
@@ -54,7 +73,7 @@ In a nutshell, Python virtual environments help decouple and isolate Python inst
  python -m venv env
 ```
 
-### Activate Virtual Environment
+### Activate Python virtual environment
 This will activate your virtual environment. Immediately, you will notice that your terminal path includes env, signifying an activated virtual environment.
 
 ``` bash
@@ -63,7 +82,23 @@ source env/bin/activate
 
 ### Windows 11/10
 
+#### Install VLC
+Download VLC [here](https://www.videolan.org/) (* 64-bit only)
+
+
 #### Install the project requirements
 ``` bash
 pip install -r requirements.txt
 ```
+
+## Video Demo
+https://github.com/user-attachments/assets/0ff4bf5c-e9e2-4d63-a5da-1fbda08663aa
+
+## Current Bugs
+- Video files _need_ to be in the root directory to properly encode as m3u8 playlist
+- Remove older streams from the schedule
+
+## Testing
+- Windows: 11 & 10 (64-bit only) 
+- Linux: Ubuntu 24.04
+- MacOS: M1 Apple Silicon

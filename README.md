@@ -5,7 +5,7 @@
 <p align="center"><em>Taking streaming to new heights!</em></p> 
 
 ## What is this?
-An automation project focused on streamlining the m3u creation process with the Open Broadcast Software API & WebSockets. 
+An automation project focused on streamlining the m3u creation process and stream scheduling using the Open Broadcast Software API & WebSockets. This project was put together to explore diy automated broadcasting for subcarrier.tv and inspired by a project from [cyberboy666](https://github.com/cyberboy666/obs_scheduler?tab=readme-ov-file).
 
 <p align="left">
   <img width="55%" height="55%" src="https://github.com/user-attachments/assets/004a37a7-f267-46a4-9684-e0a27ac535cd"/>  
@@ -102,3 +102,6 @@ https://github.com/user-attachments/assets/0ff4bf5c-e9e2-4d63-a5da-1fbda08663aa
 - Windows: 11 & 10 (64-bit only) 
 - Linux: Ubuntu 24.04
 - MacOS: M1 Apple Silicon
+
+## Attributions
+- [obs_scheduler by cyberboy666](https://github.com/cyberboy666/obs_scheduler?tab=readme-ov-file)

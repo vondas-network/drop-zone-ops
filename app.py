@@ -111,13 +111,13 @@ def start_stream(playlist_path, stream_name):
         scene_item_id = cl.get_scene_item_id(scene_name, input_name, offset=None).scene_item_id
         cl.set_scene_item_transform(scene_name, scene_item_id, {'boundsWidth': base_width, 'boundsHeight': base_height, 'boundsType': 'OBS_BOUNDS_SCALE_INNER'})
 
-
+        # ----------------------------
         # Start the stream
-        logging.info("Starting stream with playlist: {}".format(playlist_path))
-        current_playlist = playlist_path
-        start_time = datetime.now()
-        cl.start_stream()
-        stream_active = True
+        # logging.info("Starting stream with playlist: {}".format(playlist_path))
+        # current_playlist = playlist_path
+        # start_time = datetime.now()
+        # cl.start_stream()
+        # stream_active = True
 
     except Exception as e:
         logging.error(f"OBS Error: {e}")

@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="45%" height="45%" src="https://github.com/user-attachments/assets/e3551d8c-dce3-4b38-be46-631013c78e06"/>  
+  <img width="35%" height="35%" src="https://github.com/user-attachments/assets/e3551d8c-dce3-4b38-be46-631013c78e06"/>  
 </p>
 
 <p align="center"><em>Taking streaming to new heights!</em></p> 

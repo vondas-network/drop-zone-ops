@@ -155,6 +155,15 @@ def scheduled_stream():
                 stop_stream()
         time.sleep(60)  # Check every minute
 
+def remove_schedule():
+    global schedule_file
+    # Check if the file exists
+    if os.path.exists(schedule_file):
+        os.remove(schedule_file)  # Remove the file
+        print(f"{schedule_file} has been removed.")
+    else:
+        print(f"{schedule_file} does not exist.")
+
 def load_schedule():
     global schedule
     if os.path.exists(schedule_file):
@@ -186,6 +195,7 @@ def get_obs_state():
 def index():
     load_schedule()
     obs_state = get_obs_state()
+    remove_schedule()
     return render_template('index.html', current_playlist=current_playlist, schedule=schedule, obs_state=obs_state)
 
 @app.route('/schedule', methods=['POST'])
@@ -217,14 +227,6 @@ def schedule_stream():
     print(url_for('index'))
     return redirect(url_for('index'))
 
-
-
-
-
-
-
-
-
 '''
 @app.route('/')
 def index():
@@ -255,6 +257,15 @@ def export():
     time.sleep(3) 
     return jsonify({"message": "M3U file generated successfully!"})
 
+
+@app.route('/remove-schedule', methods=['GET'])
+def remove_sche():
+    print("WE GOT HERE YA")
+    obs_state = get_obs_state()
+    return redirect(url_for('index'))
+    # return render_template('index.html', current_playlist=current_playlist, schedule=schedule, obs_state=obs_state)
+
+    # remove_schedule()
 
 if __name__ == '__main__':
     port = 9999  # Default port

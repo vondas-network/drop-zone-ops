@@ -31,6 +31,7 @@
         <button class="file-btn" id="folder-upload-btn">Upload Folder</button>
         <button class="file-btn" id="export-btn">Export M3U</button>
         <button class="file-btn" id="clear-btn">Clear Uploads</button>
+        <button class="file-btn" id="clear-btn-sch">Clear Schedule</button>
     </div>
 
     <!-- File List Display (Centered with Left-Aligned Text) -->
@@ -94,6 +95,7 @@
         const fileList = document.getElementById('file-list');
         const exportBtn = document.getElementById('export-btn');
         const clearBtn = document.getElementById('clear-btn');
+        const clearBtnSch = document.getElementById('clear-btn-sch');
         const folderInput = document.getElementById('folder-input');
         const notification = document.getElementById('notification');
         let filesArray = [];
@@ -162,6 +164,19 @@
             dropzone.removeAllFiles(true);
         };
 
+        clearBtnSch.onclick = () => {
+            console.log('clear schedule');
+            fetch('/remove-schedule', {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                showNotification(data.message || 'Success!');
+            });
+            window.location.reload()
+        };
+
         function showNotification(message) {
             notification.innerText = message;
             notification.style.display = 'block';
@@ -176,6 +191,8 @@
                 }, 500);
             }, 2000);
         }
+
+
     </script>
 </body>
 </html>

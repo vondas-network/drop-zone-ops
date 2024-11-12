@@ -67,7 +67,7 @@ pip install -r requirements.txt
 #### Create Python virtual environment
 In a nutshell, Python virtual environments help decouple and isolate Python installs and associated pip packages. This allows end-users to install and manage their own set of packages that are independent of those provided by the system or used by other projects.
 ```bash
- cd videobeaux
+ cd drop-zone-ops
  python -m venv env
 ```
 

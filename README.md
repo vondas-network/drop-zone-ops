@@ -1,13 +1,12 @@
 <p align="center">
-  <img width="35%" height="35%" src="https://github.com/user-attachments/assets/e3551d8c-dce3-4b38-be46-631013c78e06"/>  
+  <img width="300px" height="950px" src="https://github.com/user-attachments/assets/e3551d8c-dce3-4b38-be46-631013c78e06"/>  
 </p>
+
 
 <p align="center"><em>Taking automation to new heights!</em></p> 
 
 ## What is this?
-<p align="left">
-  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/004a37a7-f267-46a4-9684-e0a27ac535cd"/>  
-</p>
+![image](https://github.com/user-attachments/assets/004a37a7-f267-46a4-9684-e0a27ac535cd)
 
 An automation project focused on streamlining the m3u creation process and stream scheduling using the Open Broadcaster Software API & WebSockets. This project was put together to explore diy automated broadcasting for [schwwaaa](https://schwwaaa.net/) & [subcarrier.tv](https://subcarrier.tv/). Influenced by [obs-scheduler by cyberboy666](https://github.com/cyberboy666/obs_scheduler?tab=readme-ov-file).
 
@@ -15,15 +14,11 @@ An automation project focused on streamlining the m3u creation process and strea
 
 Once the server is running, go to _http://localhost:9999_
 
-<p align="left">
-  <img width="85%" height="85%" src="https://github.com/user-attachments/assets/8fc34706-f0a5-4173-8edd-3d831f032515"/>  
-</p>
+![image](https://github.com/user-attachments/assets/8fc34706-f0a5-4173-8edd-3d831f032515)
 
 Place files in the drop zone or click "Upload Folder" to upload content manually
 
-<p align="left">
-  <img width="55%" height="55%" src="https://github.com/user-attachments/assets/5a8dedca-5102-4b9a-b7cb-42685286445f"/>  
-</p>
+![image](https://github.com/user-attachments/assets/5a8dedca-5102-4b9a-b7cb-42685286445f)
 
 Export m3U file to the root directory, example below
 
@@ -37,20 +32,14 @@ replay_video.mp4
 
 Schedule your stream
 
-<p align="left">
-  <img width="45%" height="45%" src="https://github.com/user-attachments/assets/4add66dd-4ce1-40cc-92eb-cea1b7e98b6b"/>  
-</p>
+![image](https://github.com/user-attachments/assets/4add66dd-4ce1-40cc-92eb-cea1b7e98b6b)
 
 Once the stream is scheduled it will refresh the page and appear below
-<p align="left">
-  <img width="85%" height="85%" src="https://github.com/user-attachments/assets/5298e22d-eb81-45ba-a1db-ef214a7f8e38"/>  
-</p>
+![image](https://github.com/user-attachments/assets/5298e22d-eb81-45ba-a1db-ef214a7f8e38)
 
 A new OBS _scene_ is created with _VLC_ as a source when the scheduled time happens
 
-<p align="left">
-  <img width="85%" height="85%" src="https://github.com/user-attachments/assets/d454c646-9b22-4338-b380-40ecb9721c73"/>  
-</p>
+![image](https://github.com/user-attachments/assets/d454c646-9b22-4338-b380-40ecb9721c73)
 
 ## Project setup
 
@@ -82,7 +71,6 @@ source env/bin/activate
 
 #### Install VLC
 Download VLC [here](https://www.videolan.org/) (* 64-bit only)
-
 
 #### Install the project requirements
 ``` bash
